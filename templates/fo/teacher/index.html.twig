@@ -1,0 +1,38 @@
+{% extends 'fo/base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Liste des professeurs</h2>
+          <p>Voici la liste des professeur au seins du Lycee TacTic</p>
+        </div>
+
+        <div class="row">
+            {% for teacherList in teacherLists %}
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                    <img src="{{asset('images/uploads/imgteacher/'~ teacherList.photos)}}" alt="">
+                    <h4>{{teacherList.name}}</h4>
+                    <span>Professeur de</span>
+                    <p>
+                        {{ teacherList.subject}}
+                    </p>
+                    <div class="social">
+                        <a href=""><i class="icofont-twitter"></i></a>
+                        <a href=""><i class="icofont-facebook"></i></a>
+                        <a href=""><i class="icofont-instagram"></i></a>
+                        <a href=""><i class="icofont-linkedin"></i></a>
+                    </div>
+                    </div>
+                </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+{% endblock %}

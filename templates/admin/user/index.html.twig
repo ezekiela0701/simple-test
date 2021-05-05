@@ -1,0 +1,24 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="{{path('dashboard')}}">Home</a>
+						</li>
+						<li class="breadcrumb-item active">User</li>
+					</ol>
+				</div>
+				<div class="col-sm-6">
+					<a class="btn btn-primary float-sm-right" href="{{path('user_register')}}">Ajouter nouveau utilisateur</a>
+				</div>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+	</section>
+{% endblock %}

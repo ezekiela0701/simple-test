@@ -1,0 +1,70 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello TeacherController!{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('assets/fileinputmaster/css/fileinput.css') }}" media="all" rel="stylesheet" type="text/css"/>
+    {# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous"> #}
+    <link href="{{ asset('assets/fileinputmaster/themes/explorer-fa/theme.css') }}" media="all" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="{{path('dashboard')}}">Dashboard</a>
+						</li>
+                        <li class="breadcrumb-item">
+							<a href="{{path('bo_teacher')}}">Teacher</a>
+						</li>
+						{% if editMode %}	
+							<li class="breadcrumb-item active">Edit</li>	
+						{% else %}					
+							<li class="breadcrumb-item active">New</li>
+						{% endif %}
+					</ol>
+				</div>
+				<div class="col-sm-6">
+					<a class="btn btn-success float-sm-right" href="{{path('bo_teacher')}}">Retour</a>
+				</div>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+	</section>
+	<div class="col-12">
+		<div class="card card-success">
+			<div class="card-header">
+				<h3 class="card-title">Ajouter nouveau professeur</h3>
+			</div>
+			<div class="card-body">
+				{% include ("admin/teacher/form/_formTeacher.html.twig") %} 
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/fileinputmaster/js/plugins/piexif.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/fileinputmaster/js/plugins/sortable.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/fileinputmaster/js/fileinput.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/fileinputmaster/js/locales/fr.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/fileinputmaster/themes/fas/theme.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+		console.log("test") ;
+        $('#teacher_photos').fileinput({
+            theme: 'fas',
+            language: 'fr',
+            uploadUrl: '',
+            allowedFileExtensions: ['jpg', 'png', 'gif' , 'jpeg' ],
+            showUpload: false,
+            showCaption: true,
+            showCancel: true,
+            showUploadedThumbs: true,
+            showRemove: true,
+            showPreview: true,
+        });
+
+    </script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}New UserController!
+{% endblock %}
+
+{% block body %}
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="{{path('dashboard')}}">Home</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a href="{{path('user_list')}}">User</a>
+						</li>
+						<li class="breadcrumb-item active">new</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="col-12">
+		<div class="card card-secondary">
+			<div class="card-header">
+				<center>
+					<h3 class="card-title">Ajouter nouveau utilisateur</h3>
+				</center>
+			</div>
+			<div class="card-body">
+				{% include ("admin/user/formUser/_formUser.html.twig") %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

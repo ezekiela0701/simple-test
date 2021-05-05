@@ -1,0 +1,21 @@
+{{ form_start(form_teacher) }}
+
+    <div class="form-group mt-4">
+        {{ form_row(form_teacher.name) }}
+    </div>
+     <div class="form-group mt-4">
+        {{ form_row(form_teacher.subject) }}
+    </div>
+     <div class="form-group mt-4">
+        {{ form_row(form_teacher.photos) }}
+    </div>
+     {# <div class="form-group mt-4">
+        <label>Image du professeur:</label>
+        <input type="file" name="imgprof" accept="image/*" multiple required/>
+    </div> #}
+    <div class="form-group mt-4">
+        <div class="col-lg-6 offset-3">
+        <button type="submit" class="btn btn-primary btn-block">Ajouter dans la liste</button>
+    </div>
+
+{{ form_end(form_teacher) }}

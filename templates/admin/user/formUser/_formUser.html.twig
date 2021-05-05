@@ -1,0 +1,21 @@
+{{ form_start(formUser) }}
+    <div class="form-group mt-4">
+        {{ form_row(formUser.name) }}
+    </div>
+    <div class="form-group mt-4">
+        {{ form_row(formUser.firstname) }}
+    </div>
+    <div class="form-group mt-4">
+        {{ form_row(formUser.email) }}
+    </div>
+     <div class="form-group mt-4">
+        {{ form_row(formUser.password) }}
+    </div>
+     <div class="form-group mt-4">
+        {{ form_row(formUser.confirm_password) }}
+    </div>
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+
+{{ form_end(formUser) }}
